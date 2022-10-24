@@ -1,0 +1,9 @@
+<section class="country-list">
+  <article
+    class="country-list-item"
+    *ngFor="let country of countries$ | async"
+    [routerLink]="country.country"
+  >
+    <h2>{{ country.country }}</h2>
+  </article>
+</section>

@@ -1,0 +1,23 @@
+header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+
+  h1 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+  }
+}
+
+.container {
+  display: flex;
+  gap: 1rem;
+
+  .country-list {
+    flex: 2;
+  }
+
+  .weather-details {
+    flex: 1;
+  }
+}

@@ -1,0 +1,19 @@
+<aside>
+  <section *ngIf="weather$ | async as weather; else loading">
+    <h3>{{ weather.weather }}</h3>
+    <hr *ngIf="weather.windSpeed && weather.temp" />
+
+    <p *ngIf="weather.windSpeed">Wind speed: {{ weather.windSpeed }}</p>
+    <p *ngIf="weather.temp">Temperature: {{ weather.temp }}</p>
+
+    <button
+      type="button"
+      *ngIf="weather.windSpeed && weather.temp"
+      (click)="switchUnit()"
+    >
+      Switch to {{ units[currentUnit] }}
+    </button>
+  </section>
+
+  <ng-template #loading><span class="loader"></span></ng-template>
+</aside>
