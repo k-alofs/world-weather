@@ -1,6 +1,21 @@
+.top-bar {
+  display: flex;
+  justify-content: space-between;
+
+  margin-bottom: 0.5rem;
+
+  input {
+    padding: 0.5rem;
+  }
+}
+
 .country-list {
   display: grid;
   gap: 0.5rem;
+
+  &-grid {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 
   &-item {
     border: 1px solid black;

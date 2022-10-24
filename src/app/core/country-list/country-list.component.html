@@ -1,7 +1,19 @@
-<section class="country-list">
+<section class="top-bar">
+  <input type="text" placeholder="Search country" [(ngModel)]="searchTerm" />
+
+  <button type="button" (click)="switchLayout()">
+    Switch to {{ layouts[selectedLayout] }}
+  </button>
+</section>
+
+<section
+  class="country-list"
+  *ngIf="countries$ | async as countries"
+  [ngClass]="{ 'country-list-grid': selectedLayout === 'grid' }"
+>
   <article
     class="country-list-item"
-    *ngFor="let country of countries$ | async"
+    *ngFor="let country of filterCountries(countries)"
     [routerLink]="country.country"
   >
     <h2>{{ country.country }}</h2>

@@ -1,6 +1,6 @@
 <aside>
   <section *ngIf="weather$ | async as weather; else loading">
-    <h3>{{ weather.weather }}</h3>
+    <h3>{{ currentCountry }} | {{ weather.weather }}</h3>
     <hr *ngIf="weather.windSpeed && weather.temp" />
 
     <p *ngIf="weather.windSpeed">Wind speed: {{ weather.windSpeed }}</p>
